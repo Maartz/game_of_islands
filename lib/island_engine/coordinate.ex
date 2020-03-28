@@ -1,4 +1,8 @@
 defmodule IslandEngine.Coordinate do
+  @moduledoc """
+    Coordinate defines what a coordinate is on a board
+  """
+
   alias __MODULE__
 
   @enforce_keys [:row, :col]

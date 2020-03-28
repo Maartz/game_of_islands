@@ -1,8 +1,12 @@
 defmodule IslandEngine.Guesses do
+  @moduledoc """
+    Provides API for make a guess
+  """
+
   alias __MODULE__
 
   @enforce_keys [:hits, :misses]
   defstruct [:hits, :misses]
 
-  def new(), do: %Guesses{hits: MapSet.new(), misses: MapSet.new()}
+  def new, do: %Guesses{hits: MapSet.new(), misses: MapSet.new()}
 end
