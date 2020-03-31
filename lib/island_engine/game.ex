@@ -1,6 +1,14 @@
 defmodule IslandEngine.Game do
   use GenServer
 
+  alias IslandEngine.{Board, Guesses, Rules}
+
+  def init(name) do
+    player1 = %{name: name, board: Board.new, guesses: Guesses.new}
+    player2 = %{name: nil, board: Board.new, guesses: Guesses.new}
+    {:ok, %{player1: player1, player2: player2, rules: %Rules{}}}
+  end
+
   def handle_info(:first, state) do
     IO.puts "This message has been handled by handle_info/2, matching on :first"
     {:noreply, state}
